@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">{{ convertToDate({ dt: weatherDay.dt }) | date: dateFormat }}</h3>
+    </div>
+    <div class="panel-body">
+        Daytime temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.day }) }} °C
+    </div>
+    
+    <div class="panel-body">
+        Min temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.min }) }} °C
+    </div>
+    
+    <div class="panel-body">
+        Max temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.max }) }} °C
+    </div>
+    
+    <div class="panel-body">
+        
+<!--        Wind speed: {{ findWind({windSpeed: weatherDay.speed }) }} speed-->
+       <img ng-src='{{ findWind({ windSpeed: weatherDay.speed }) }}' alt="sunAndRain" height="55" width="82"></img>
+
+       <img ng-src='{{ findImage({ daytimeTemp: weatherDay.temp.day }) }}' alt="sunAndRain" height="55" width="82"></img>
+    </div>
+
+
+    
+</div>
